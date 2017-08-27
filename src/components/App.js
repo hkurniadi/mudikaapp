@@ -6,6 +6,11 @@ import Drawer from 'material-ui/Drawer';
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
+import Dialog from 'material-ui/Dialog';
+import RaisedButton from 'material-ui/RaisedButton';
+
+import Welcome from './Welcome';
+import Events from './Events';
 
 class App extends Component {
   constructor(props) {
@@ -16,11 +21,9 @@ class App extends Component {
       targetOrigin: {
         horizontal: 'left',
         vertical: 'top'
-      }
+      },
+      // welcomeModalIsOpen: true
     }
-    // Functions 'this' binding
-    // this.toggleAppBarDrawer = this.toggleAppBarDrawer.bind(this);
-    this.toggleAppBarPopover = this.toggleAppBarPopover.bind(this);
   }
   
   // toggleAppBarDrawer = (event) => {
@@ -39,11 +42,17 @@ class App extends Component {
     })
   }
   
-  handleClosePopover = (event) => {
+  closePopover = (event) => {
     this.setState({
       popoverIsOpen: false
     })
   }
+
+  // closeWelcomeModal = (event) => {
+  //   this.setState({
+  //     welcomeModalIsOpen: false
+  //   })
+  // }
 
   render() {
     const menuStyle = {
@@ -55,8 +64,23 @@ class App extends Component {
       textAlign: 'center'
     };
 
+    // const welcomeModalActions = [
+    //   <RaisedButton 
+    //     label="Discover Mudika"
+    //     modal={true}
+    //     onClick={this.closeWelcomeModal}
+    //     primary={true}
+    //   />
+    // ]
+
     return (
       <div className="App">
+        {/* <Dialog
+          open={this.state.welcomeModalIsOpen}
+          actions={welcomeModalActions}
+        >
+          Welcome to Mudika Vancouver!
+        </Dialog> */}
         <AppBar 
           title='Mudika Vancouver'
           // onLeftIconButtonTouchTap={this.toggleAppBarDrawer}
@@ -65,7 +89,8 @@ class App extends Component {
         />
         <Popover
           open={this.state.popoverIsOpen}
-          onRequestClose={this.handleClosePopover}
+          onRequestClose={this.closePopover}
+          animated={true}
           anchorEl={this.state.anchorEl}
           style={popoverStyle}
           targetOrigin={this.state.targetOrigin}
@@ -76,6 +101,8 @@ class App extends Component {
           </Menu>
         </Popover>
 
+        <Welcome></Welcome>
+        {/* <Events></Events> */}
         {/* <Drawer
           docked={false}
           width={200}

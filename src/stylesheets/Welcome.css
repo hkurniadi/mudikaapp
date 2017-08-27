@@ -1,0 +1,16 @@
+.welcome-section {
+  background-image: url('../assets/welcome-background.jpg');
+  background-size: cover;
+  background-position: center;
+  height: -webkit-fill-available;
+}
+
+.title {
+  position: center;
+  color: white;
+}
+
+.description {
+  color: white;
+  font-size: 20px
+}
