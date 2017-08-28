@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-// import '../stylesheets/NavBar.css';
+import '../stylesheets/NavBar.css';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import Popover from 'material-ui/Popover';
@@ -86,7 +86,6 @@ class NavBar extends Component {
           title='Mudika Vancouver'
           onTitleTouchTap={this.toggleAppBarPopover}
           iconElementLeft={<IconButton><Link to="/"><ActionHome/></Link></IconButton>}
-          // onLeftIconButtonTouchTap={}
           // onLeftIconButtonTouchTap={this.toggleAppBarDrawer}
           // showMenuIconButton={false}
         />
@@ -99,7 +98,7 @@ class NavBar extends Component {
           targetOrigin={this.state.targetOrigin}
         >
           <Menu onItemTouchTap={this.closePopover}>
-            <MenuItem><NavLink to="/events" activeClassName="selected">Events</NavLink></MenuItem>
+            <MenuItem><NavLink to="/events">Events</NavLink></MenuItem>
             <MenuItem><NavLink to="/ministries">Ministries</NavLink></MenuItem>
           </Menu>
         </Popover>

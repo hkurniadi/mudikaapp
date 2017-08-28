@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 
 // import logo from './logo.svg';
-import '../stylesheets/App.css';
+// import '../stylesheets/App.css';
 
+/* TODO
+Refactor component import to be async
+*/
 import NavBar from './NavBar';
 import Welcome from './Welcome';
 import Events from './Events';

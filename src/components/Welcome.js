@@ -4,9 +4,6 @@ import '../stylesheets/Welcome.css';
 class Welcome extends Component {
   
   render() {
-    // const welcomeStyle = {
-    //   backgroundImage: 'url(.)' 
-    // }
     return(
       <div className="welcome-section">
         <h1 className="title">Welcome to Mudika Vancouver</h1>
