@@ -7,6 +7,8 @@ import './stylesheets/index.css';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
+import { BrowserRouter } from 'react-router-dom';
+
 const muiTheme = getMuiTheme({
   palette: {
     primary1Color: deepOrange500
@@ -14,8 +16,10 @@ const muiTheme = getMuiTheme({
 })
 
 ReactDOM.render(
-  <MuiThemeProvider muiTheme={muiTheme}>
-    <App />
-  </MuiThemeProvider>
+  <BrowserRouter>
+    <MuiThemeProvider muiTheme={muiTheme}>
+      <App />
+    </MuiThemeProvider>
+  </BrowserRouter>
   , document.getElementById('root'));
 registerServiceWorker();

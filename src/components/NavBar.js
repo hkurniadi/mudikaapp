@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// import '../stylesheets/NavBar.css';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import Popover from 'material-ui/Popover';
@@ -7,6 +8,10 @@ import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
+import IconButton from 'material-ui/IconButton';
+import ActionHome from 'material-ui/svg-icons/action/home';
+
+import { NavLink, Link } from 'react-router-dom';
 
 class NavBar extends Component {
   constructor(props) {
@@ -70,7 +75,7 @@ class NavBar extends Component {
     // ]
 
     return (
-      <div className="App">
+      <div className="NavBar">
         {/* <Dialog
           open={this.state.welcomeModalIsOpen}
           actions={welcomeModalActions}
@@ -79,9 +84,11 @@ class NavBar extends Component {
         </Dialog> */}
         <AppBar 
           title='Mudika Vancouver'
-          // onLeftIconButtonTouchTap={this.toggleAppBarDrawer}
           onTitleTouchTap={this.toggleAppBarPopover}
-          showMenuIconButton={false}
+          iconElementLeft={<IconButton><Link to="/"><ActionHome/></Link></IconButton>}
+          // onLeftIconButtonTouchTap={}
+          // onLeftIconButtonTouchTap={this.toggleAppBarDrawer}
+          // showMenuIconButton={false}
         />
         <Popover
           open={this.state.popoverIsOpen}
@@ -91,9 +98,9 @@ class NavBar extends Component {
           style={popoverStyle}
           targetOrigin={this.state.targetOrigin}
         >
-          <Menu>
-            <MenuItem>News</MenuItem>
-            <MenuItem>Ministries</MenuItem>
+          <Menu onItemTouchTap={this.closePopover}>
+            <MenuItem><NavLink to="/events" activeClassName="selected">Events</NavLink></MenuItem>
+            <MenuItem><NavLink to="/ministries">Ministries</NavLink></MenuItem>
           </Menu>
         </Popover>
 
