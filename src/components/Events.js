@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import Divider from 'material-ui/Divider';
 import Slider from 'react-slick';
 
 class Events extends Component {
@@ -14,6 +15,7 @@ class Events extends Component {
     return(
       <div>
         <h1>What's happening in Mudika</h1>
+        <Divider />
         {/* TODO
           Render each event card using Mapping  
         */}

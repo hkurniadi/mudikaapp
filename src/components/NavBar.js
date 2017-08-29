@@ -11,7 +11,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import IconButton from 'material-ui/IconButton';
 import ActionHome from 'material-ui/svg-icons/action/home';
 
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, Redirect } from 'react-router-dom';
 
 class NavBar extends Component {
   constructor(props) {
@@ -22,8 +22,8 @@ class NavBar extends Component {
       targetOrigin: {
         horizontal: 'left',
         vertical: 'top'
+        // welcomeModalIsOpen: true
       },
-      // welcomeModalIsOpen: true
     }
   }
 
@@ -49,6 +49,10 @@ class NavBar extends Component {
     })
   }
 
+  goToHomePage = (event) => {
+    return <Redirect push to="/"/>;
+  }
+
   // closeWelcomeModal = (event) => {
   //   this.setState({
   //     welcomeModalIsOpen: false
@@ -56,6 +60,7 @@ class NavBar extends Component {
   // }
   
   render() {
+
     const menuStyle = {
       textAlign: 'left'
     };
@@ -86,7 +91,7 @@ class NavBar extends Component {
           title='Mudika Vancouver'
           onTitleTouchTap={this.toggleAppBarPopover}
           iconElementLeft={<IconButton><Link to="/"><ActionHome/></Link></IconButton>}
-          // onLeftIconButtonTouchTap={this.toggleAppBarDrawer}
+          onLeftIconButtonTouchTap={() => {this.goToHomePage()}}
           // showMenuIconButton={false}
         />
         <Popover

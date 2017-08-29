@@ -1,8 +1,9 @@
-.welcome-section {
+.Welcome {
   background-image: url('../assets/welcome-background.jpg');
   background-size: cover;
   background-position: center;
   height: -webkit-fill-available;
+  text-align: center;
 }
 
 .title {
