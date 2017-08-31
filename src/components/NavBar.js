@@ -50,7 +50,7 @@ class NavBar extends Component {
   }
 
   goToHomePage = (event) => {
-    return <Redirect push to="/"/>;
+    return <Redirect push={true} to="/"/>;
   }
 
   // closeWelcomeModal = (event) => {
@@ -62,7 +62,7 @@ class NavBar extends Component {
   render() {
 
     const menuStyle = {
-      textAlign: 'left'
+      textAlign: 'center'
     };
 
     const popoverStyle = {
@@ -88,10 +88,12 @@ class NavBar extends Component {
           Welcome to Mudika Vancouver!
         </Dialog> */}
         <AppBar 
-          title='Mudika Vancouver'
+          title='Explore Mudika'
+          titleStyle={{color: '#f05f40'}}
           onTitleTouchTap={this.toggleAppBarPopover}
           iconElementLeft={<IconButton><Link to="/"><ActionHome/></Link></IconButton>}
           onLeftIconButtonTouchTap={() => {this.goToHomePage()}}
+          className="navigation"
           // showMenuIconButton={false}
         />
         <Popover
@@ -102,7 +104,8 @@ class NavBar extends Component {
           style={popoverStyle}
           targetOrigin={this.state.targetOrigin}
         >
-          <Menu onItemTouchTap={this.closePopover}>
+          <Menu style={menuStyle} onItemTouchTap={this.closePopover}>
+            <MenuItem><NavLink to="/about">About</NavLink></MenuItem>
             <MenuItem><NavLink to="/events">Events</NavLink></MenuItem>
             <MenuItem><NavLink to="/ministries">Ministries</NavLink></MenuItem>
           </Menu>

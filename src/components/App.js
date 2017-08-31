@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 
 // import logo from './logo.svg';
-// import '../stylesheets/App.css';
+import '../stylesheets/App.css';
 
 /* TODO
 Refactor component import to be async
 */
 import NavBar from './NavBar';
 import Welcome from './Welcome';
+import About from './About';
 import Events from './Events';
 import Ministries from './Ministries';
 
@@ -20,6 +21,7 @@ class App extends Component {
         <NavBar />
         <Switch>
           <Route exact path="/" component={Welcome} />
+          <Route exact path="/about" component={About} />
           <Route exact path="/events" component={Events} />
           <Route exact path="/ministries" component={Ministries} />
         </Switch>

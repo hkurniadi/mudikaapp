@@ -10,6 +10,7 @@ class Events extends Component {
       dots: true,
       arrows: true,
       slidesToScroll: true,
+      autoplay: true
     }
 
     return(

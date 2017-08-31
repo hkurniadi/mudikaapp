@@ -2,8 +2,9 @@
   background-image: url('../assets/welcome-background.jpg');
   background-size: cover;
   background-position: center;
-  height: -webkit-fill-available;
+  height: stretch;
   text-align: center;
+  flex: auto;
 }
 
 .title {

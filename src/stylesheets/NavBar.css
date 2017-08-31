@@ -1,3 +1,8 @@
 .NavBar {
   text-align: center;
+  flex: auto;
+}
+
+.navigation {
+  background-color: white !important;
 }
