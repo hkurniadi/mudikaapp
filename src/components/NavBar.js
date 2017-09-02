@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import '../stylesheets/NavBar.css';
 import AppBar from 'material-ui/AppBar';
+import Divider from 'material-ui/Divider'
 import Drawer from 'material-ui/Drawer';
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
@@ -62,7 +63,8 @@ class NavBar extends Component {
   render() {
 
     const menuStyle = {
-      textAlign: 'center'
+      textAlign: 'center',
+      // backgroundColor: 'transparent'
     };
 
     const popoverStyle = {
@@ -91,8 +93,8 @@ class NavBar extends Component {
           title='Explore Mudika'
           titleStyle={{color: '#f05f40'}}
           onTitleTouchTap={this.toggleAppBarPopover}
-          iconElementLeft={<IconButton><Link to="/"><ActionHome/></Link></IconButton>}
-          onLeftIconButtonTouchTap={() => {this.goToHomePage()}}
+          iconElementRight={<IconButton><Link to="/"><ActionHome/></Link></IconButton>}
+          onRightIconButtonTouchTap={() => {this.goToHomePage()}}
           className="navigation"
           // showMenuIconButton={false}
         />
@@ -106,7 +108,9 @@ class NavBar extends Component {
         >
           <Menu style={menuStyle} onItemTouchTap={this.closePopover}>
             <MenuItem><NavLink to="/about">About</NavLink></MenuItem>
+            <Divider />
             <MenuItem><NavLink to="/events">Events</NavLink></MenuItem>
+            <Divider />
             <MenuItem><NavLink to="/ministries">Ministries</NavLink></MenuItem>
           </Menu>
         </Popover>
