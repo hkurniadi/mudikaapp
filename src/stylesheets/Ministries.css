@@ -1,0 +1,12 @@
+.Ministries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.grid-list {
+  width: 500;
+  height: 450;
+  overflow-y: auto;
+  /* flex: column; */
+}  

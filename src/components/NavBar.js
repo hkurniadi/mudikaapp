@@ -61,17 +61,6 @@ class NavBar extends Component {
   // }
   
   render() {
-
-    const menuStyle = {
-      textAlign: 'center',
-      // backgroundColor: 'transparent'
-    };
-
-    const popoverStyle = {
-      width: '100%',
-      textAlign: 'center'
-    };
-
     // const welcomeModalActions = [
     //   <RaisedButton 
     //     label="Discover Mudika"
@@ -95,7 +84,7 @@ class NavBar extends Component {
           onTitleTouchTap={this.toggleAppBarPopover}
           iconElementRight={<IconButton><Link to="/"><ActionHome/></Link></IconButton>}
           onRightIconButtonTouchTap={() => {this.goToHomePage()}}
-          className="navigation"
+          className="navigation-bar"
           // showMenuIconButton={false}
         />
         <Popover
@@ -103,10 +92,10 @@ class NavBar extends Component {
           onRequestClose={this.closePopover}
           animated={true}
           anchorEl={this.state.anchorEl}
-          style={popoverStyle}
+          className="popover-div"
           targetOrigin={this.state.targetOrigin}
         >
-          <Menu style={menuStyle} onItemTouchTap={this.closePopover}>
+          <Menu className="popover-menu" onItemTouchTap={this.closePopover}>
             <MenuItem><NavLink to="/about">About</NavLink></MenuItem>
             <Divider />
             <MenuItem><NavLink to="/events">Events</NavLink></MenuItem>

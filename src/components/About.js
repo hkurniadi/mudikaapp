@@ -11,10 +11,10 @@ class About extends Component {
     return (
       <div className="About">
         <h1>About Mudika</h1>
-        <p>We are a Christ-centered community of Indonesian young adults in Vancouver, Canada. We strive to provide young people with an opportunity to encounter God in ways that fit in with today's modern world. We would love to have you join us!</p>
-        <Divider />
+        <p className="about-description">We are a Christ-centered community of Indonesian young adults in Vancouver, Canada. We strive to provide young people with an opportunity to encounter God in ways that fit in with today's modern world. We would love to have you join us!</p>
+        <hr className="divider" />
         <h1>Our Team</h1>
-        <h3>(2017-2019 Service Period)</h3>
+        <h3>(2017-2019)</h3>
         {/* TODO: change this ListItem content into taking values from backend instead of hardcoded */}
         <SelectibleList>
           <ListItem

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import '../stylesheets/Ministries.css';
 import { GridList, GridTile } from 'material-ui/GridList';
 import Dialog from 'material-ui/Dialog';
 
@@ -37,31 +38,16 @@ class Ministries extends Component {
   };
   
   render() {
-    /* TODO: move the styles to its CSS */
-    const styles = {
-      minstriesRoot: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around'
-      },
-      gridList: {
-        width: 500,
-        height: 450,
-        overflowY: 'auto',
-        // flex: 'column'
-      }  
-    };
-
     return(
-      <div style={styles.minstriesRoot}>
+      <div className="Ministries">
         <h1>Ministries</h1>
         <p>"Each of you should use whatever gift you have received to serve others, as faithful stewards of God's grace in its various forms." - 1 Peter 4:10</p>
         
         <p>We have a lot of opportunities where you can do your part in serving the Lord. We would love to have you join us! To apply, just send an email to mudikavancouver@gmail.com, and we will connect you to a ministry coordinator!</p>
-        {/* TODO: make a slideshow on each minsitry grid */}
+        {/* TODO: make a photo slideshow on each minsitry grid */}
         <GridList
           cellHeight={180}
-          style={styles.gridList}
+          className="grid-list"
         >
           <GridTile
             key={1}

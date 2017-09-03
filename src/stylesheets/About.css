@@ -1,7 +1,21 @@
 .About {
   flex: auto;
+  /* position: center; */
 }
 
 h1, h3 {
   text-align: center;
+}
+
+.about-description {
+  /* increase margin in bigger screen */
+  margin: 10px 20px 10px 20px;
+  text-align: center;
+}
+
+.divider {
+  border: none;
+  height: 2px;
+  background-color: rgb(224, 224, 224);
+  margin: 10% 15%;
 }

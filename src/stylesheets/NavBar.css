@@ -3,6 +3,16 @@
   flex: auto;
 }
 
-.navigation {
+.navigation-bar {
   background-color: white !important;
 }
+
+.popover-div {
+  width: 100%;
+  text-align: center;  
+}
+
+.popover-menu {
+  text-align: center;
+}
+

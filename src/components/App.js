@@ -4,7 +4,9 @@ import React, { Component } from 'react';
 import '../stylesheets/App.css';
 
 /* TODO
-Refactor component import to be async
+  1. Refactor component import to be async
+  2. Deploy to firebase hosting
+  3. Create database in Firebase
 */
 import NavBar from './NavBar';
 import Welcome from './Welcome';
