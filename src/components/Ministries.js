@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import '../stylesheets/Ministries.css';
 import { GridList, GridTile } from 'material-ui/GridList';
 import Dialog from 'material-ui/Dialog';
+import Snackbar from 'material-ui/Snackbar';
 
 class Ministries extends Component {
   constructor(props) {
@@ -13,10 +14,15 @@ class Ministries extends Component {
       marketingTile: false,
       liturgyTile: false,
       choirTile: false,
-      worshipBandTile: false
+      worshipBandTile: false,
+      ctaIsOpen: false
     }
   };
   
+  componentDidMount() {
+    // window.addEventListener("scroll", this.showCTAelement);
+  }
+
   openMinistryDetail = (e) => {
     // console.log("incoming event", e.currentTarget.id);
     let clickedTile = e.currentTarget.id;
@@ -36,14 +42,32 @@ class Ministries extends Component {
       worshipBandTile: false
     })
   };
+
+  showCTAelement = () => {
+    // TODO: find the algorihtm to check the bottom of a page
+    // console.log("inner height", window.innerHeight);
+    // console.log("pageyoffset", window.pageYOffset);
+    // console.log("document.body.offsetHeight", document.body.offsetHeight);
+    // console.log("scrolly position", window.scrollY);
+    if (window.scrollY > 0) {
+    // if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight ) {
+      this.setState({
+        ctaIsOpen: true
+      });
+    } else {
+      this.setState({
+        ctaIsOpen: false
+      });
+    }
+  }
   
   render() {
     return(
       <div className="Ministries">
         <h1>Ministries</h1>
-        <p>"Each of you should use whatever gift you have received to serve others, as faithful stewards of God's grace in its various forms." - 1 Peter 4:10</p>
+        <p className="ministries-description">Each of you should use whatever gift you have received to serve others, as faithful stewards of God's grace in its various forms." - 1 Peter 4:10</p>
         
-        <p>We have a lot of opportunities where you can do your part in serving the Lord. We would love to have you join us! To apply, just send an email to mudikavancouver@gmail.com, and we will connect you to a ministry coordinator!</p>
+        {/* <p>We have a lot of opportunities where you can do your part in serving the Lord. We would love to have you join us! To apply, just send an email to mudikavancouver@gmail.com, and we will connect you to a ministry coordinator!</p> */}
         {/* TODO: make a photo slideshow on each minsitry grid */}
         <GridList
           cellHeight={180}
@@ -164,6 +188,11 @@ class Ministries extends Component {
             </Dialog>
           </GridTile>
         </GridList>
+        {/* <Snackbar 
+          open={this.state.ctaIsOpen}
+          className="callToActionJoinMinistry"
+          message="We have a lot of opportunities where you can do your part in serving the Lord. We would love to have you join us! To apply, just send an email to mudikavancouver@gmail.com, and we will connect you to a ministry coordinator!"
+        /> */}
       </div>
     );
   }

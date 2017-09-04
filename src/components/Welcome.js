@@ -7,7 +7,7 @@ class Welcome extends Component {
   render() {
     return(
       <div className="Welcome">
-        <section className="description-background">
+        <section className="welcome-description-background">
           <h1 className="title">Welcome to Mudika Vancouver</h1>
           <p className="description">We Are Young Adult Population of the Indonesian Catholic Society of British Columbia (UKIBC)</p>
         </section>

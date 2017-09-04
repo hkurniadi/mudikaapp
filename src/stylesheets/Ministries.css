@@ -1,5 +1,6 @@
 .Ministries {
   display: flex;
+  flex-flow: column;
   flex-wrap: wrap;
   justify-content: space-around;
 }
@@ -9,4 +10,15 @@
   height: 450;
   overflow-y: auto;
   /* flex: column; */
-}  
+}
+
+.ministries-description {
+  /* increase margin in bigger screen */
+  margin: 10px 20px 10px 20px;
+  text-align: center;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
