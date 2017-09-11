@@ -12,6 +12,10 @@
   /* flex: column; */
 }
 
+.grid-list:hover {
+  cursor: pointer;
+}
+
 .ministries-description {
   /* increase margin in bigger screen */
   margin: 10px 20px 10px 20px;
@@ -19,6 +23,6 @@
 }
 
 img {
-  height: auto;
+  height: 100%;
   width: 100%;
 }

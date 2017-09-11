@@ -15,12 +15,17 @@ class Ministries extends Component {
       liturgyTile: false,
       choirTile: false,
       worshipBandTile: false,
-      ctaIsOpen: false
+      ctaIsOpen: false,
     }
   };
   
   componentDidMount() {
+    /* This code is to show a snackbar when scroll down, can be an option for CTA button */
     // window.addEventListener("scroll", this.showCTAelement);
+
+    /* Another option for CTA by displaying a snackbar by timing */
+    setTimeout(this.showCTAelement, 3000);
+
   }
 
   openMinistryDetail = (e) => {
@@ -48,7 +53,9 @@ class Ministries extends Component {
     // console.log("inner height", window.innerHeight);
     // console.log("pageyoffset", window.pageYOffset);
     // console.log("document.body.offsetHeight", document.body.offsetHeight);
-    // console.log("scrolly position", window.scrollY);
+    
+    /* Option 1 - by scroll */
+    /* console.log("scrolly position", window.scrollY);
     if (window.scrollY > 0) {
     // if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight ) {
       this.setState({
@@ -58,7 +65,20 @@ class Ministries extends Component {
       this.setState({
         ctaIsOpen: false
       });
-    }
+    } */
+
+    /* Option 2 - by time */
+    // NOTES: When a tile is clicked, the snackbar somehow opens up too
+    this.setState({
+      ctaIsOpen: true
+    })
+  }
+
+  sendJoinEmail = () => {
+    alert("You just joined a ministry");
+    this.setState({
+      ctaIsOpen: false
+    })
   }
   
   render() {
@@ -70,7 +90,7 @@ class Ministries extends Component {
         {/* <p>We have a lot of opportunities where you can do your part in serving the Lord. We would love to have you join us! To apply, just send an email to mudikavancouver@gmail.com, and we will connect you to a ministry coordinator!</p> */}
         {/* TODO: make a photo slideshow on each minsitry grid */}
         <GridList
-          cellHeight={180}
+          cellHeight={'auto'}
           className="grid-list"
         >
           <GridTile
@@ -94,7 +114,7 @@ class Ministries extends Component {
           </GridTile>
           <GridTile
             key={2}
-            title={"Events"}
+            title={"Events"}         
           >
             <img 
               id="eventsTile"
@@ -113,7 +133,7 @@ class Ministries extends Component {
           </GridTile>
           <GridTile
             key={3}
-            title={"Marketing"}
+            title={"Marketing"}          
           >
             <img
               id="marketingTile"
@@ -132,7 +152,7 @@ class Ministries extends Component {
           </GridTile>
           <GridTile
             key={4}
-            title={"Liturgy"}
+            title={"Liturgy"}         
           >
             <img
               id="liturgyTile"
@@ -188,11 +208,13 @@ class Ministries extends Component {
             </Dialog>
           </GridTile>
         </GridList>
-        {/* <Snackbar 
+        <Snackbar 
           open={this.state.ctaIsOpen}
+          action={"Join Us!"}
+          onActionTouchTap={this.sendJoinEmail}
           className="callToActionJoinMinistry"
-          message="We have a lot of opportunities where you can do your part in serving the Lord. We would love to have you join us! To apply, just send an email to mudikavancouver@gmail.com, and we will connect you to a ministry coordinator!"
-        /> */}
+          message="We'd love to have you serving with us"
+        />
       </div>
     );
   }
