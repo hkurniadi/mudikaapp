@@ -94,6 +94,7 @@ class Ministries extends Component {
           className="grid-list"
         >
           <GridTile
+            className="tile"
             key={1}
             title={"Cell Groups"}
           >

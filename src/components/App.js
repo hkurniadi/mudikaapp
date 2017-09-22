@@ -13,6 +13,7 @@ import Welcome from './Welcome';
 import About from './About';
 import Events from './Events';
 import Ministries from './Ministries';
+import Footer from './Footer';
 
 import { Switch, Route } from 'react-router-dom';
 
@@ -27,6 +28,7 @@ class App extends Component {
           <Route exact path="/events" component={Events} />
           <Route exact path="/ministries" component={Ministries} />
         </Switch>
+        <Footer />
       </div>
     );
   }
