@@ -1,3 +1,5 @@
+import 'dotenv/config';
+
 import React, { Component } from 'react';
 
 // import logo from './logo.svg';
@@ -13,11 +15,13 @@ import Welcome from './Welcome';
 import About from './About';
 import Events from './Events';
 import Ministries from './Ministries';
+import HoverButton from './HoverButton';
 import Footer from './Footer';
 
 import { Switch, Route } from 'react-router-dom';
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
@@ -28,7 +32,15 @@ class App extends Component {
           <Route exact path="/events" component={Events} />
           <Route exact path="/ministries" component={Ministries} />
         </Switch>
+        <HoverButton />
         <Footer />
+
+        {/* Below is an example of using React Portal and rendering a component by passing in Children props and render the children in the wrapper component */}
+        {/* <Footer>
+          <div className="Footer">
+            <p>Made with Faith and &hearts; by Mudika Vancouver</p>
+          </div>
+        </Footer> */}
       </div>
     );
   }
