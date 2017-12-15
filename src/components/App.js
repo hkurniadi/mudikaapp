@@ -32,8 +32,8 @@ class App extends Component {
           <Route exact path="/events" component={Events} />
           <Route exact path="/ministries" component={Ministries} />
         </Switch>
-        <HoverButton />
         <Footer />
+        <HoverButton />
 
         {/* Below is an example of using React Portal and rendering a component by passing in Children props and render the children in the wrapper component */}
         {/* <Footer>

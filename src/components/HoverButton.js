@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import Menu from './Menu.js';
+import PopMenu from './PopMenu.js';
+
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
 import '../stylesheets/HoverButton.css';
-
-// This functional Menu component may be able to be converted to a class component
-// function Menu(props) {
-//   return (
-//     <h1>This is menu yo!</h1>
-//   )
-// }
 
 class HoverButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
       menuIsExpanded: false,
-      menuTitle: "Menu"
+      menuComponent: null
     }
     this.hoverButtonRoot = document.getElementById('hover-button-root');
 
@@ -25,23 +21,25 @@ class HoverButton extends Component {
   }
 
   toggleMenu(event) {
-    console.log("Button is clicked");
-    console.log("State before change", this.state.menuIsExpanded);
+    // console.log("Button is clicked");
+    // console.log("State before change", this.state.menuIsExpanded);
 
-    if (this.state.isExpanded) {
+    if (this.state.menuIsExpanded) {
+      // Closing the menu on click when it is open
       this.setState((prevState) => {
-        console.log("Previous state", prevState);  
+        // console.log("Previous state", prevState);  
         return {
           menuIsExpanded: !prevState.menuIsExpanded,
-          menuTitle: "Close"
+          menuComponent: null
         }
       })
     } else {
+      // Open the menu on click when it is close
       this.setState((prevState) => {
-        console.log("Previous state", prevState);
+        // console.log("Previous state", prev State);
         return {
-          menuIsExpanded: !this.state.menuIsExpanded,
-          menuTitle: "Menu"
+          menuIsExpanded: !prevState.menuIsExpanded,
+          menuComponent: <PopMenu handleMenuItemClick={this.toggleMenu}/>
         }
       })
     }
@@ -49,17 +47,23 @@ class HoverButton extends Component {
   }
 
   render() {
-    let menu = null;
-    
-    if (this.state.menuIsExpanded) {
-      menu = <Menu />;
-    }
-
     return (
+      /* ReactDOM.createPortal(
+        <button className="hover-menu-button" onClick={this.toggleMenu}>
+          {this.state.menuComponent}
+          <h1 className="hover-menu-button">{this.state.menuTitle}</h1>
+        </button>,
+        this.hoverButtonRoot
+      ) */
       ReactDOM.createPortal(
-        <div>
-          {menu}
-          <button id="hover-menu-button" onClick={this.toggleMenu}><h1>{this.state.menuTitle}</h1></button>
+        <div className="hover-menu">
+          {this.state.menuComponent}
+          <FloatingActionButton 
+            className="hover-menu-button"
+            onClick={this.toggleMenu}
+          >
+            <MoreVertIcon />
+          </FloatingActionButton>
         </div>,
         this.hoverButtonRoot
       )

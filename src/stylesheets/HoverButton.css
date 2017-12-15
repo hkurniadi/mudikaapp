@@ -1,10 +1,18 @@
-button {
-  border-width: 1px;
-  border-color: black;
-  border-radius: 50%;
-  position: fixed;
-  right: 20px;
-  bottom: 40px;
-  left: 20px;
-  /* z-index: 3; */
+.hover-menu {
+  display: none !important;
 }
+
+@media screen and (max-width: 599px) {
+  /* button.hover-menu-button h1.hover-menu-button { */
+    .hover-menu {
+      display: inline-block !important;
+      position: fixed;
+    }
+    
+    .hover-menu-button {
+    position: fixed;
+    right: 10%;
+    bottom: 40px;
+  }
+}
+

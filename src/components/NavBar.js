@@ -27,6 +27,8 @@ class NavBar extends Component {
         // welcomeModalIsOpen: true
       },
     }
+
+    this.goToHomePage = this.goToHomePage.bind(this);
   }
 
   // toggleAppBarDrawer = (event) => {
@@ -51,8 +53,9 @@ class NavBar extends Component {
     })
   }
 
-  goToHomePage = (event) => {
-    return <Redirect push={true} to="/"/>;
+  goToHomePage(event) {
+    // return <Redirect push to="/"/>;
+    alert("Hellow");
   }
 
   // closeWelcomeModal = (event) => {
@@ -72,23 +75,21 @@ class NavBar extends Component {
     // ]
 
     return (
-      <div className="NavBar">
-        {/* <Dialog
-          open={this.state.welcomeModalIsOpen}
-          actions={welcomeModalActions}
-        >
-          Welcome to Mudika Vancouver!
-        </Dialog> */}
         <AppBar 
-          title='Explore Mudika'
           titleStyle={{color: '#f05f40'}}
-          onTitleTouchTap={this.toggleAppBarPopover}
-          iconElementRight={<IconButton><Link to="/"><ActionHome/></Link></IconButton>}
-          onRightIconButtonTouchTap={() => {this.goToHomePage()}}
-          className="navigation-bar"
-          // showMenuIconButton={false}
-        />
-        <Popover
+          className="navigation-bar mobile-nav-bar"
+          showMenuIconButton={false} 
+        >
+          <NavLink to="/" id="navbar-home-button">Mudika Vancouver</NavLink>
+        </AppBar>
+    );
+  }
+}
+
+export default NavBar;
+
+{/* <div className="NavBar"> */}
+ {/* <Popover
           open={this.state.popoverIsOpen}
           onRequestClose={this.closePopover}
           animated={true}
@@ -103,23 +104,5 @@ class NavBar extends Component {
             <Divider />
             <MenuItem><NavLink to="/ministries">Ministries</NavLink></MenuItem>
           </Menu>
-        </Popover>
-
-        {/* <Events></Events> */}
-        {/* <Drawer
-          docked={false}
-          width={200}
-          open={this.state.drawerIsOpen}
-          onRequestChange={ (open) => this.setState({drawerIsOpen: open}) }
-         >
-          <Menu style={menuStyle}>
-            <MenuItem>News</MenuItem>
-            <MenuItem>Ministries</MenuItem>
-          </Menu>
-        </Drawer> */}
-      </div>
-    );
-  }
-}
-
-export default NavBar;
+        </Popover> */}
+      // </div>

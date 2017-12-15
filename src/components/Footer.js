@@ -25,6 +25,7 @@ class Footer extends Component {
   render() {
     return (
       <div className="Footer">
+        <hr className="divider"/>
         <p>Made with Faith and &hearts; by Mudika Vancouver</p>
       </div>
     )
