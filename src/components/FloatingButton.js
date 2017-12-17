@@ -6,16 +6,16 @@ import PopMenu from './PopMenu.js';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
-import '../stylesheets/HoverButton.css';
+import '../stylesheets/FloatingButton.css';
 
-class HoverButton extends Component {
+class FloatingButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
       menuIsExpanded: false,
       menuComponent: null
     }
-    this.hoverButtonRoot = document.getElementById('hover-button-root');
+    this.floatingButtonRoot = document.getElementById('floating-button-root');
 
     this.toggleMenu = this.toggleMenu.bind(this);
   }
@@ -49,26 +49,26 @@ class HoverButton extends Component {
   render() {
     return (
       /* ReactDOM.createPortal(
-        <button className="hover-menu-button" onClick={this.toggleMenu}>
+        <button className="floating-menu-button" onClick={this.toggleMenu}>
           {this.state.menuComponent}
-          <h1 className="hover-menu-button">{this.state.menuTitle}</h1>
+          <h1 className="floating-menu-button">{this.state.menuTitle}</h1>
         </button>,
-        this.hoverButtonRoot
+        this.floatingButtonRoot
       ) */
       ReactDOM.createPortal(
-        <div className="hover-menu">
+        <div className="floating-menu">
           {this.state.menuComponent}
           <FloatingActionButton 
-            className="hover-menu-button"
+            className="floating-menu-button"
             onClick={this.toggleMenu}
           >
             <MoreVertIcon />
           </FloatingActionButton>
         </div>,
-        this.hoverButtonRoot
+        this.floatingButtonRoot
       )
     )
   }
 }
 
-export default HoverButton;
+export default FloatingButton;

@@ -15,7 +15,7 @@ import Welcome from './Welcome';
 import About from './About';
 import Events from './Events';
 import Ministries from './Ministries';
-import HoverButton from './HoverButton';
+import FloatingButton from './FloatingButton';
 import Footer from './Footer';
 
 import { Switch, Route } from 'react-router-dom';
@@ -33,7 +33,7 @@ class App extends Component {
           <Route exact path="/ministries" component={Ministries} />
         </Switch>
         <Footer />
-        <HoverButton />
+        <FloatingButton />
 
         {/* Below is an example of using React Portal and rendering a component by passing in Children props and render the children in the wrapper component */}
         {/* <Footer>

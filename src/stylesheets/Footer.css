@@ -3,3 +3,10 @@
   white-space: normal;
 }
 
+.footer-divider {
+  border: none;
+  height: 2px;
+  background-color: rgb(224, 224, 224);
+  margin: 5% 15%;
+}
+

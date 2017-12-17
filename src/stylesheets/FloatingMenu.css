@@ -1,14 +1,16 @@
 @media screen and (max-width: 599px) {
-  .popover-menu {
+  .floating-menu {
     background-color: white;
     height: 180px;
     width: 100px !important;
     text-align: center;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
     left: 62%;
     bottom: 12%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
   }  
   /* TODO: fix menu alignment on different phone screens, fine when it was responsive though */
+}
+
+.floating-menu-item {
+
 }

@@ -1,15 +1,15 @@
-.hover-menu {
+.floating-menu {
   display: none !important;
 }
 
 @media screen and (max-width: 599px) {
-  /* button.hover-menu-button h1.hover-menu-button { */
-    .hover-menu {
+  /* button.floating-menu-button h1.floating-menu-button { */
+    .floating-menu {
       display: inline-block !important;
       position: fixed;
     }
     
-    .hover-menu-button {
+    .floating-menu-button {
     position: fixed;
     right: 10%;
     bottom: 40px;

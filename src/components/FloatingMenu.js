@@ -9,9 +9,9 @@ import Divider from 'material-ui/Divider';
 // Import react-router components
 import { NavLink, Link, Redirect } from 'react-router-dom';
 
-import '../stylesheets/PopMenu.css';
+import '../stylesheets/FloatingMenu.css';
 
-class PopMenu extends Component {
+class FloatingMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -19,15 +19,15 @@ class PopMenu extends Component {
 
   render() {
     return (
-      <Menu className="hover-menu popover-menu" onItemClick={this.props.handleMenuItemClick}>
-        <MenuItem><NavLink to="/about">About</NavLink></MenuItem>
+      <Menu className="floating-menu" onItemClick={this.props.handleMenuItemClick}>
+        <MenuItem className="floating-menu-item"><NavLink to="/about">About</NavLink></MenuItem>
         <Divider />
-        <MenuItem><NavLink to="/events">Events</NavLink></MenuItem>
+        <MenuItem className="floating-menu-item"><NavLink to="/events">Events</NavLink></MenuItem>
         <Divider />
-        <MenuItem><NavLink to="/ministries">Ministries</NavLink></MenuItem>
+        <MenuItem className="floating-menu-item"><NavLink to="/ministries">Ministries</NavLink></MenuItem>
       </Menu>
     )
   }
 }
 
-export default PopMenu;
+export default FloatingMenu;
