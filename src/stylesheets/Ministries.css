@@ -3,7 +3,7 @@
   flex-flow: column;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 8px 8px 0px 8px;
+  margin: 70px 8px 0px 8px;
 }
 
 .grid-list {
@@ -23,7 +23,7 @@
   text-align: center;
 }
 
-img {
+img.ministries-image {
   height: 100%;
   width: 100%;
 }

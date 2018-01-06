@@ -100,7 +100,8 @@ class Ministries extends Component {
           >
             <img 
               id="cellGroupTile"
-              src="https://scontent-sea1-1.xx.fbcdn.net/v/t31.0-8/13613692_1048698641851415_871953362126539028_o.jpg?oh=39e18bd0bda19aadcf0875fe5d029e95&oe=5A13DFDC"
+              className="ministries-image"
+              src='../assets/cell-group-image.jpg'
               alt="Cell Groups" 
               onClick={this.openMinistryDetail}
             />
@@ -119,6 +120,7 @@ class Ministries extends Component {
           >
             <img 
               id="eventsTile"
+              className="ministries-image"
               src="https://scontent-sea1-1.xx.fbcdn.net/v/t31.0-8/19956797_1635408206513786_3697153409521955705_o.jpg?oh=2d21d82e7643279358240105be122f41&oe=5A2867BB"
               alt="Events"
               onClick={this.openMinistryDetail}
@@ -138,6 +140,7 @@ class Ministries extends Component {
           >
             <img
               id="marketingTile"
+              className="ministries-image"
               src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/19149483_1611841218870485_626310443908144366_n.jpg?oh=d6295d6ce4d8be6079325e211ccf430a&oe=5A5DA3F7"
               alt="Marketing"
               onClick={this.openMinistryDetail}
@@ -157,6 +160,7 @@ class Ministries extends Component {
           >
             <img
               id="liturgyTile"
+              className="ministries-image"
               src="https://static.wixstatic.com/media/d1cbc0_95b035eca26b4d4ebbf099c0328d09c7.jpg/v1/fill/w_782,h_528,al_c,q_85,usm_0.66_1.00_0.01/d1cbc0_95b035eca26b4d4ebbf099c0328d09c7.webp"
               alt="Liturgy"
               onClick={this.openMinistryDetail}
@@ -176,6 +180,7 @@ class Ministries extends Component {
           >
             <img 
               id="choirTile"
+              className="ministries-image"
               src="https://scontent-sea1-1.xx.fbcdn.net/v/t31.0-8/1524069_787030754657165_1587857533_o.jpg?oh=fdb83dbd829537d6f37ccb2a9fae9f4a&oe=5A22879F"
               alt="Choir"
               onClick={this.openMinistryDetail}
@@ -195,6 +200,7 @@ class Ministries extends Component {
           >
             <img
               id="worshipBandTile"
+              className="ministries-image"
               src="https://scontent-sea1-1.xx.fbcdn.net/v/t31.0-8/13585103_1048697521851527_8971758814945814663_o.jpg?oh=1e561155cced87f8901bc3df48430325&oe=5A1AABEC"
               alt="Worship Band"
               onClick={this.openMinistryDetail}

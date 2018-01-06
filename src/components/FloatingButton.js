@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import PopMenu from './PopMenu.js';
+import FloatingMenu from './FloatingMenu.js';
 
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
@@ -39,7 +39,7 @@ class FloatingButton extends Component {
         // console.log("Previous state", prev State);
         return {
           menuIsExpanded: !prevState.menuIsExpanded,
-          menuComponent: <PopMenu handleMenuItemClick={this.toggleMenu}/>
+          menuComponent: <FloatingMenu handleMenuItemClick={this.toggleMenu}/>
         }
       })
     }
@@ -56,7 +56,7 @@ class FloatingButton extends Component {
         this.floatingButtonRoot
       ) */
       ReactDOM.createPortal(
-        <div className="floating-menu">
+        <div>
           {this.state.menuComponent}
           <FloatingActionButton 
             className="floating-menu-button"

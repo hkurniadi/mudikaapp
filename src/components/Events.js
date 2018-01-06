@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 
+// Stylesheets
 import "../stylesheets/Events.css";
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import Divider from 'material-ui/Divider';
 import Slider from 'react-slick';
 
-import firebase from '../firebase.js';
+// Assests
+import uberImg from '../assets/uber-welcomingparty.jpg';
+// import ultimateLoveImg from '';
 
 class Events extends Component {
   constructor() {
@@ -21,34 +24,7 @@ class Events extends Component {
   // }
 
   componentDidMount() {
-    const eventsRef = firebase.database().ref('events');
-    // console.log("Events references", eventsRef);
   
-    /* Read the database once after the component mounts */
-    // const eventsObject = eventsRef.once('value').then((snapshot) => {
-    //   console.log("Snapshot", snapshot.val());
-    // });
-    // eventsObject returns a promise
-    // console.log("Events object", eventsObject);
-    
-    /* Read the database whenever there is changes */
-    eventsRef.on('value', (snapshot) => {
-      let events = snapshot.val();
-      // console.log("Events node", events);
-      let newEventsState = [];
-      for (let event in events) {
-        newEventsState.push({
-          name: events[event].name,
-          time: events[event].time,
-          type: events[event].type
-        })
-      }
-      // console.log("events object", newEventsState);
-      this.setState({
-        events: newEventsState
-      })
-      // console.log("State values", this.state.events[0]);
-    });
   }
 
   render() {
@@ -66,18 +42,16 @@ class Events extends Component {
       }
     }
 
-
-
     return(
       <div className="Events">
-        <h1>What's happening in Mudika</h1>
+        <h1>Events</h1>
         {/* TODO: fix the map rendering to render Card component instead of list */}
-        <ul>
+        {/* <ul>
           {this.state.events.map((event, i) => {
             return <li key={i}>{event.type}</li>
           })}
-        </ul>
-        <h1>Events</h1>
+        </ul> */}
+        {/* <h1>Events</h1> */}
         <Divider />
         {/* TODO
           Render each event card using Mapping  
@@ -91,7 +65,7 @@ class Events extends Component {
             <CardMedia
               mediaStyle={styles.cardMedia}
             >
-              <img src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/20728043_1668835346504405_2388021263409969642_n.jpg?oh=e786db32bfe665f221eb55c2fb755ba9&oe=5A19FDD5" alt="U-BER" />
+              <img className="event-image" src={uberImg} />
             </CardMedia>
             <CardText>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -109,25 +83,7 @@ class Events extends Component {
             <CardMedia
               mediaStyle={styles.cardMedia}
             >
-              <img src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/20728043_1668835346504405_2388021263409969642_n.jpg?oh=e786db32bfe665f221eb55c2fb755ba9&oe=5A19FDD5" alt="U-BER" />
-            </CardMedia>
-            <CardText>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-              Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-              Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-            </CardText>
-          </Card>
-          <br />
-          <Card>
-            <CardHeader
-              title="Ultimate Love"
-              subtitle="Mudika Annual Retreat"
-            />
-            <CardMedia
-              mediaStyle={styles.cardMedia}
-            >
-              <img src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/20728043_1668835346504405_2388021263409969642_n.jpg?oh=e786db32bfe665f221eb55c2fb755ba9&oe=5A19FDD5" alt="U-BER" />
+              <img className="event-image" src={uberImg} />
             </CardMedia>
             <CardText>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.

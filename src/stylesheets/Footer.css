@@ -1,12 +1,14 @@
 .Footer {
   text-align: center;
   white-space: normal;
+  /* position: fixed; */
+  bottom: 10px;
 }
 
 .footer-divider {
   border: none;
   height: 2px;
   background-color: rgb(224, 224, 224);
-  margin: 5% 15%;
+  margin: 3% 10%;
 }
 

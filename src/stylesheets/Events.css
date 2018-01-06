@@ -1,5 +1,9 @@
 .Events {
-  margin: 8px 8px 0px 8px;
+  margin: 70px 8px 0px 8px;
 }
 
-/* change overflow to scroll */
+.event-image {
+  min-width: 300px !important;
+  max-width: 0% !important;
+  margin: 20px !important;
+}

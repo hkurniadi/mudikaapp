@@ -4,13 +4,9 @@
     height: 180px;
     width: 100px !important;
     text-align: center;
-    left: 62%;
-    bottom: 12%;
+    right: 80px;
+    bottom: 110px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
-  }  
-  /* TODO: fix menu alignment on different phone screens, fine when it was responsive though */
+  }
 }
 
-.floating-menu-item {
-
-}
