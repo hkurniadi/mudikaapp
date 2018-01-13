@@ -3,7 +3,11 @@
 }
 
 .event-image {
+  /* TODO
+  change the min-width to be relative so it becomes responsive
+  */
   min-width: 300px !important;
   max-width: 0% !important;
   margin: 20px !important;
 }
+

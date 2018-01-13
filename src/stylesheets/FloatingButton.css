@@ -2,6 +2,10 @@
   display: none !important;
 }
 
+.floating-menu-button {
+  display: none !important;
+}
+
 @media screen and (max-width: 599px) {
   /* button.floating-menu-button h1.floating-menu-button { */
     .floating-menu {
@@ -10,9 +14,10 @@
     }
     
     .floating-menu-button {
-    position: fixed;
-    right: 12%;
-    bottom: 7%;
+      display: inline-block !important;
+      position: fixed;
+      right: 12%;
+      bottom: 7%;
   }
 }
 
