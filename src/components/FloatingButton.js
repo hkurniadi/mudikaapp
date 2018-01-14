@@ -48,13 +48,6 @@ class FloatingButton extends Component {
 
   render() {
     return (
-      /* ReactDOM.createPortal(
-        <button className="floating-menu-button" onClick={this.toggleMenu}>
-          {this.state.menuComponent}
-          <h1 className="floating-menu-button">{this.state.menuTitle}</h1>
-        </button>,
-        this.floatingButtonRoot
-      ) */
       ReactDOM.createPortal(
         <div>
           {this.state.menuComponent}

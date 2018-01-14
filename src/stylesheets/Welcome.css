@@ -1,5 +1,5 @@
 .Welcome {
-  background-image: url('../assets/welcome-background.jpg');
+  /* background-image: url('../assets/welcome-background.jpg'); */
   background-size: cover;
   background-position: center;
   width: 100vw;
@@ -17,10 +17,10 @@
   font-size: 20px;
 }
 
-.welcome-description {
-  background-color: gray;
-  background-blend-mode: overlay;
-  opacity: 0.85;
-  padding: 5px;
-  margin-top: 50%;
-}
+  .welcome-description {
+    background-color: gray;
+    background-blend-mode: overlay;
+    opacity: 0.85;
+    padding: 5px;
+    margin-top: 220px;
+  }

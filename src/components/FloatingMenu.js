@@ -9,6 +9,7 @@ import Divider from 'material-ui/Divider';
 // Import react-router components
 import { NavLink, Link, Redirect } from 'react-router-dom';
 
+// Stylesheets
 import '../stylesheets/FloatingMenu.css';
 
 class FloatingMenu extends Component {

@@ -12,13 +12,21 @@
   cursor: pointer;
 }
 
-.mobile-nav-bar {
-  visibility: hidden;
+.navbar-large-screen-tabs {
+  display: none;
 }
 
-@media screen and (max-width: 599px) {
-  .mobile-nav-bar {
-    visibility: visible;
+@media screen and (min-width: 600px) {
+  .navbar-large-screen-tabs {
+    display: inline-block;
+  }
+
+  #navbar-home-tab {
+    text-align: left !important;
+  }
+
+  .navbar-tab {
+    margin: 10px !important;
   }
 }
 
@@ -28,7 +36,7 @@ div.navigation-bar > h1 {
   visibility: collapse;
 }
 
-#navbar-home-button {
+#navbar-home-tab {
   white-space: nowrap; 
   overflow: hidden; 
   text-overflow: ellipsis; 

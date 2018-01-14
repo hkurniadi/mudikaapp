@@ -7,7 +7,6 @@
 }
 
 @media screen and (max-width: 599px) {
-  /* button.floating-menu-button h1.floating-menu-button { */
     .floating-menu {
       display: inline-block !important;
       position: fixed;

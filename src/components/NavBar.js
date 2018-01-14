@@ -13,74 +13,46 @@ import IconButton from 'material-ui/IconButton';
 import ActionHome from 'material-ui/svg-icons/action/home';
 import BurgerMenu from 'material-ui/svg-icons/navigation/more-vert';
 
+import {Tabs, Tab} from 'material-ui/Tabs';
+
 import { NavLink, Link, Redirect } from 'react-router-dom';
 
 class NavBar extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      // drawerIsOpen: false,
-      popoverIsOpen: false,
-      targetOrigin: {
-        horizontal: 'left',
-        vertical: 'top'
-        // welcomeModalIsOpen: true
-      },
+    this.state = {}
+
+    // Tabs stylesheet
+    this.tabsStyle = {
+      backgroundColor: "transparent"
     }
-
-    this.goToHomePage = this.goToHomePage.bind(this);
   }
-
-  // toggleAppBarDrawer = (event) => {
-  //   event.preventDefault();
-  //   this.setState({
-  //     drawerIsOpen: !this.state.drawerIsOpen
-  //   })
-  // };
-
-  toggleAppBarPopover = (event) => {
-    event.preventDefault();
-    // console.log(event.currentTarget);
-    this.setState({
-      popoverIsOpen: !this.state.popoverIsOpen,
-      anchorEl: event.currentTarget
-    })
-  }
-  
-  closePopover = (event) => {
-    this.setState({
-      popoverIsOpen: false
-    })
-  }
-
-  goToHomePage(event) {
-    // return <Redirect push to="/"/>;
-    alert("Hellow");
-  }
-
-  // closeWelcomeModal = (event) => {
-  //   this.setState({
-  //     welcomeModalIsOpen: false
-  //   })
-  // }
   
   render() {
-    // const welcomeModalActions = [
-    //   <RaisedButton 
-    //     label="Discover Mudika"
-    //     modal={true}
-    //     onClick={this.closeWelcomeModal}
-    //     primary={true}
-    //   />
-    // ]
-
     return (
         <AppBar 
           titleStyle={{color: '#f05f40'}}
           className="navigation-bar mobile-nav-bar"
-          showMenuIconButton={false} 
+          showMenuIconButton={false}
         >
-          <NavLink to="/" id="navbar-home-button">Mudika Vancouver</NavLink>
+          <NavLink to="/" id="navbar-home-tab">Mudika Vancouver</NavLink>
+          <Tabs 
+            className="navbar-large-screen-tabs"
+            tabItemContainerStyle={this.tabsStyle}
+          >
+            <Tab 
+              className="navbar-tab"
+              label={<Link to="/about">About</Link>}
+            />
+            <Tab label="Events"
+              className="navbar-tab" 
+              label={<Link to="/events">Events</Link>}
+            />
+            <Tab label="Ministries"
+              className="navbar-tab"
+              label={<Link to="/ministries">Ministries</Link>}
+            />
+          </Tabs>
         </AppBar>
     );
   }
