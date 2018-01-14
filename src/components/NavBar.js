@@ -1,21 +1,14 @@
 import React, { Component } from 'react';
 
-import '../stylesheets/NavBar.css';
+// Material UI components
 import AppBar from 'material-ui/AppBar';
-import Divider from 'material-ui/Divider'
-import Drawer from 'material-ui/Drawer';
-import Popover from 'material-ui/Popover';
-import Menu from 'material-ui/Menu';
-import MenuItem from 'material-ui/MenuItem';
-import Dialog from 'material-ui/Dialog';
-import RaisedButton from 'material-ui/RaisedButton';
-import IconButton from 'material-ui/IconButton';
-import ActionHome from 'material-ui/svg-icons/action/home';
-import BurgerMenu from 'material-ui/svg-icons/navigation/more-vert';
-
 import {Tabs, Tab} from 'material-ui/Tabs';
 
-import { NavLink, Link, Redirect } from 'react-router-dom';
+// Stylesheets
+import '../stylesheets/NavBar.css';
+
+// React-router components
+import { NavLink, Link } from 'react-router-dom';
 
 class NavBar extends Component {
   constructor(props) {
@@ -59,22 +52,3 @@ class NavBar extends Component {
 }
 
 export default NavBar;
-
-{/* <div className="NavBar"> */}
- {/* <Popover
-          open={this.state.popoverIsOpen}
-          onRequestClose={this.closePopover}
-          animated={true}
-          anchorEl={this.state.anchorEl}
-          className="popover-div"
-          targetOrigin={this.state.targetOrigin}
-        >
-          <Menu className="popover-menu" onItemTouchTap={this.closePopover}>
-            <MenuItem><NavLink to="/about">About</NavLink></MenuItem>
-            <Divider />
-            <MenuItem><NavLink to="/events">Events</NavLink></MenuItem>
-            <Divider />
-            <MenuItem><NavLink to="/ministries">Ministries</NavLink></MenuItem>
-          </Menu>
-        </Popover> */}
-      // </div>

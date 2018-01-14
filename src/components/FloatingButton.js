@@ -12,25 +12,30 @@ class FloatingButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuIsExpanded: false,
-      menuComponent: null
+      menuIsExpanded: false
     }
+    
     this.floatingButtonRoot = document.getElementById('floating-button-root');
 
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 
-  toggleMenu(event) {
-    // console.log("Button is clicked");
-    // console.log("State before change", this.state.menuIsExpanded);
+  componentWillReceiveProps(nextProps) {
+    // Component receives new floatingMenuState prop value
+    this.setState((prevState) => {  
+      return {
+        menuIsExpanded: nextProps.floatingMenuState
+      }
+    })
+  }
 
+  toggleMenu(event) {
     if (this.state.menuIsExpanded) {
-      // Closing the menu on click when it is open
+      // Close the menu on click when it is open
       this.setState((prevState) => {
         // console.log("Previous state", prevState);  
         return {
-          menuIsExpanded: !prevState.menuIsExpanded,
-          menuComponent: null
+          menuIsExpanded: !prevState.menuIsExpanded
         }
       })
     } else {
@@ -38,8 +43,7 @@ class FloatingButton extends Component {
       this.setState((prevState) => {
         // console.log("Previous state", prev State);
         return {
-          menuIsExpanded: !prevState.menuIsExpanded,
-          menuComponent: <FloatingMenu handleMenuItemClick={this.toggleMenu}/>
+          menuIsExpanded: !prevState.menuIsExpanded
         }
       })
     }
@@ -50,7 +54,7 @@ class FloatingButton extends Component {
     return (
       ReactDOM.createPortal(
         <div>
-          {this.state.menuComponent}
+          {this.state.menuIsExpanded ? <FloatingMenu handleMenuItemClick={this.toggleMenu}/> : null }
           <FloatingActionButton 
             className="floating-menu-button"
             onClick={this.toggleMenu}

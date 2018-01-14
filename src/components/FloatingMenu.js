@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
 
 // Import material-ui component
-import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
 
 // Import react-router components
-import { NavLink, Link, Redirect } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 // Stylesheets
 import '../stylesheets/FloatingMenu.css';
 
 class FloatingMenu extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     return (
       <Menu className="floating-menu" onItemClick={this.props.handleMenuItemClick}>

@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 
-import '../stylesheets/About.css';
-import Divider from 'material-ui/Divider'
+// Material UI components
 import { List, ListItem, makeSelectable } from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
+
+// Stylesheets
+import '../stylesheets/About.css';
 
 class About extends Component {
   render() {
     const SelectibleList = makeSelectable(List);
     return (
       <div className="About">
-        <h1>About Mudika</h1>
+        <h1 className="component-title">About Mudika</h1>
         <p className="about-description">We are a Christ-centered community of Indonesian young adults in Vancouver, Canada. We strive to provide young people with an opportunity to encounter God in ways that fit in with today's modern world. We would love to have you join us!</p>
         <hr className="divider" />
         <h1>Our Team</h1>

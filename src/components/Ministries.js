@@ -94,7 +94,7 @@ class Ministries extends Component {
   render() {
     return(
       <div className="Ministries">
-        <h1>Ministries</h1>
+        <h1 className="component-title">Ministries</h1>
         <p className="ministries-description">Each of you should use whatever gift you have received to serve others, as faithful stewards of God's grace in its various forms." - 1 Peter 4:10</p>
         <GridList
           cellHeight={'auto'}

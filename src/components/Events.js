@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 
 // Stylesheets
 import "../stylesheets/Events.css";
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardHeader, CardMedia, CardText} from 'material-ui/Card';
 import Divider from 'material-ui/Divider';
-import Slider from 'react-slick';
 
 // Assests
 import uberImg from '../assets/uber-welcomingparty.jpg';
@@ -17,24 +16,8 @@ class Events extends Component {
       events: []
     }
   }
-  
-  // componentWillMount() {
-  //   // console.log("Firebase DB", firebase);
-  //   // console.log("Process ENV", process.env.REACT_APP_databaseURL);
-  // }
-
-  componentDidMount() {
-  
-  }
 
   render() {
-    const sliderSettings = {
-      dots: true,
-      arrows: true,
-      slidesToScroll: true,
-      autoplay: true
-    }
-
     const styles = {
       cardMedia: {
         height: "50%",
@@ -44,7 +27,7 @@ class Events extends Component {
 
     return(
       <div className="Events">
-        <h1>Events</h1>
+        <h1 className="component-title">Events</h1>
         {/* TODO: fix the map rendering to render Card component instead of list */}
         {/* <ul>
           {this.state.events.map((event, i) => {
@@ -56,7 +39,6 @@ class Events extends Component {
         {/* TODO
           Render each event card using Mapping  
         */}
-        {/* <Slider {...sliderSettings}> */}
           <Card>
             <CardHeader
               title="Ultimate Love"
@@ -93,8 +75,6 @@ class Events extends Component {
             </CardText>
           </Card>
           <br />
-          {/* <h1>Event 2</h1> */}
-        {/* </Slider> */}
       </div>
     );
   }

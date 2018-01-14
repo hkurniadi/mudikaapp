@@ -1,5 +1,3 @@
-import 'dotenv/config';
-
 import React, { Component } from 'react';
 
 // import logo from './logo.svg';
@@ -21,18 +19,36 @@ import Footer from './Footer';
 import { Switch, Route } from 'react-router-dom';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      floatingMenuIsExpanded: null
+    }
+
+    this.closeFloatingMenu = this.closeFloatingMenu.bind(this);
+  }
+
+  closeFloatingMenu(event) {
+    this.setState((prevState) => {
+      return {
+        floatingMenuIsExpanded: false
+      }
+    })
+  }
 
   render() {
     return (
       <div className="App">
         <NavBar />
         <Switch>
-          <Route exact path="/" component={Welcome} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/events" component={Events} />
-          <Route exact path="/ministries" component={Ministries} />
+          <div onClick={this.closeFloatingMenu}>
+            <Route exact path="/" component={Welcome} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/events" component={Events} />
+            <Route exact path="/ministries" component={Ministries} />
+          </div>
         </Switch>
-        <FloatingButton />
+        <FloatingButton floatingMenuState={this.state.floatingMenuIsExpanded} />
         <Footer />
 
         {/* Below is an example of using React Portal and rendering a component by passing in Children props and render the children in the wrapper component */}
