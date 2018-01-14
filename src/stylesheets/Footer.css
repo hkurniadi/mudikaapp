@@ -8,7 +8,8 @@
 .footer-divider {
   border: none;
   height: 2px;
+  width: 50%;
   background-color: rgb(224, 224, 224);
-  margin: 3% 10%;
+  margin-top: 30px;
 }
 

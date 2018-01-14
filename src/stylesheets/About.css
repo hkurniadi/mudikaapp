@@ -9,7 +9,6 @@ h1, h3 {
 }
 
 .about-description {
-  /* increase margin in bigger screen */
   margin: 10px 20px 10px 20px;
   text-align: center;
 }
@@ -17,6 +16,12 @@ h1, h3 {
 .divider {
   border: none;
   height: 2px;
+  width: 50%;
   background-color: rgb(224, 224, 224);
-  margin: 10% 15%;
+  margin-top: 30px;
+}
+
+.team-member {
+  width: 75%;
+  margin: auto !important;
 }
