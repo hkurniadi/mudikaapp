@@ -11,7 +11,7 @@ class About extends Component {
   render() {
     const SelectibleList = makeSelectable(List);
     return (
-      <div className="About">
+      <div className="About component">
         <h1 className="component-title">About Mudika</h1>
         <p className="about-description">We are a Christ-centered community of Indonesian young adults in Vancouver, Canada. We strive to provide young people with an opportunity to encounter God in ways that fit in with today's modern world. We would love to have you join us!</p>
         <hr className="divider" />

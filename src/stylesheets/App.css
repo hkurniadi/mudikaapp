@@ -24,6 +24,18 @@ a {
   text-decoration: none !important;
 }
 
+.close-menu-element {
+  display: none;
+}
+
+.component {
+  /* display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  justify-content: space-around; */
+  margin: 70px 8px 0px 8px;
+}
+
 .component-title {
   text-align: center;
   margin: 20px;

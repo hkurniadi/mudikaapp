@@ -13,6 +13,7 @@ import Welcome from './Welcome';
 import About from './About';
 import Events from './Events';
 import Ministries from './Ministries';
+import Mass from './Mass';
 import FloatingButton from './FloatingButton';
 import Footer from './Footer';
 
@@ -40,13 +41,13 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
+        <div className="close-menu-element" onClick={this.closeFloatingMenu} />
         <Switch>
-          <div onClick={this.closeFloatingMenu}>
             <Route exact path="/" component={Welcome} />
             <Route exact path="/about" component={About} />
             <Route exact path="/events" component={Events} />
             <Route exact path="/ministries" component={Ministries} />
-          </div>
+            <Route exact path="/mass" component={Mass} />
         </Switch>
         <FloatingButton floatingMenuState={this.state.floatingMenuIsExpanded} />
         <Footer />

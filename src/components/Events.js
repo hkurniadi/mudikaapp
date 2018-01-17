@@ -26,7 +26,7 @@ class Events extends Component {
     }
 
     return(
-      <div className="Events">
+      <div className="Events component">
         <h1 className="component-title">Events</h1>
         {/* TODO: fix the map rendering to render Card component instead of list */}
         {/* <ul>

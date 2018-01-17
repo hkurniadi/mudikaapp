@@ -4,6 +4,9 @@ import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import {Tabs, Tab} from 'material-ui/Tabs';
 
+// Import Mudika Logo
+import mudikaLogo from '../assets/mudikalogo-fire.png';
+
 // Stylesheets
 import '../stylesheets/NavBar.css';
 
@@ -26,7 +29,8 @@ class NavBar extends Component {
         <AppBar 
           titleStyle={{color: '#f05f40'}}
           className="navigation-bar mobile-nav-bar"
-          showMenuIconButton={false}
+          iconElementLeft={<img className="mudika-logo-img" src={mudikaLogo} />}
+          showMenuIconButton={true}
         >
           <NavLink to="/" id="navbar-home-tab">Mudika Vancouver</NavLink>
           <Tabs 
@@ -44,6 +48,10 @@ class NavBar extends Component {
             <Tab label="Ministries"
               className="navbar-tab"
               label={<Link to="/ministries">Ministries</Link>}
+            />
+            <Tab label="Mass"
+              className="navbar-tab"
+              label={<Link to="/mass">Mass</Link>}
             />
           </Tabs>
         </AppBar>

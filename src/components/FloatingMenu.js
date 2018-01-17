@@ -20,6 +20,8 @@ class FloatingMenu extends Component {
         <MenuItem className="floating-menu-item"><NavLink to="/events">Events</NavLink></MenuItem>
         <Divider />
         <MenuItem className="floating-menu-item"><NavLink to="/ministries">Ministries</NavLink></MenuItem>
+        <Divider />
+        <MenuItem className="floating-menu-item"><NavLink to="/mass">Mass</NavLink></MenuItem>
       </Menu>
     )
   }
