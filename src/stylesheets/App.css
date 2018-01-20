@@ -36,6 +36,13 @@ a {
   margin: 70px 8px 0px 8px;
 }
 
+@media screen and (min-width: 600px) {
+  .component {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
 .component-title {
   text-align: center;
   margin: 20px;

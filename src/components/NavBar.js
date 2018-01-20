@@ -22,6 +22,12 @@ class NavBar extends Component {
     this.tabsStyle = {
       backgroundColor: "transparent"
     }
+
+    // Mudika Logo Stylesheet
+    this.iconStyleLeft = {
+      marginTop: "auto",
+      marginBottom: "auto"
+    }
   }
   
   render() {
@@ -30,6 +36,7 @@ class NavBar extends Component {
           titleStyle={{color: '#f05f40'}}
           className="navigation-bar mobile-nav-bar"
           iconElementLeft={<img className="mudika-logo-img" src={mudikaLogo} />}
+          iconStyleLeft={this.iconStyleLeft}
           showMenuIconButton={true}
         >
           <NavLink to="/" id="navbar-home-tab">Mudika Vancouver</NavLink>

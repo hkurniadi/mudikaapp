@@ -36,9 +36,6 @@ class Events extends Component {
         </ul> */}
         {/* <h1>Events</h1> */}
         <Divider />
-        {/* TODO
-          Render each event card using Mapping  
-        */}
           <Card>
             <CardHeader
               title="Ultimate Love"

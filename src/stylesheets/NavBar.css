@@ -17,8 +17,19 @@
 }
 
 .mudika-logo-img {
-  height: 30px; 
-  width: 30px;
+  height: 40px; 
+  width: 40px;
+  margin-left: 24px;
+}
+
+@media screen and (max-width: 500px) {
+  #navbar-home-tab {
+    padding-right: 35px;
+  }
+
+  .mudika-logo-img {
+    margin-left: 50px;
+  }
 }
 
 @media screen and (min-width: 600px) {
