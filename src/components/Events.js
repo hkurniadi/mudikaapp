@@ -9,6 +9,12 @@ import Divider from 'material-ui/Divider';
 import uberImg from '../assets/uber-welcomingparty.jpg';
 // import ultimateLoveImg from '';
 
+// APIs
+import eventsAPI from '../api/events.js';
+
+// Data
+import events from '../models/events.json';
+
 class Events extends Component {
   constructor() {
     super();
@@ -17,26 +23,55 @@ class Events extends Component {
     }
   }
 
+  componentDidMount() {
+    console.log("events data", events);
+    this.setState({
+      events: events
+    })
+  }
+
   render() {
     const styles = {
       cardMedia: {
         height: "50%",
-        width: "50%"
+        width: "50%"    
       }
     }
 
     return(
       <div className="Events component">
         <h1 className="component-title">Events</h1>
-        {/* TODO: fix the map rendering to render Card component instead of list */}
-        {/* <ul>
-          {this.state.events.map((event, i) => {
-            return <li key={i}>{event.type}</li>
-          })}
-        </ul> */}
-        {/* <h1>Events</h1> */}
+        {/* TODO: fix 'src' path name */}
         <Divider />
-          <Card>
+        {this.state.events.map((event, i) => {
+          return (
+            <div key={i}>
+              <Card>
+                <CardHeader
+                    title={event.category + " - " + event.title}
+                    subtitle={event.date}
+                  />
+                <CardMedia
+                  mediaStyle={styles.cardMedia}
+                >
+                  <img className="event-image" src={uberImg} />
+                </CardMedia>
+                <CardText>
+                  {event.description}
+                </CardText>
+              </Card>
+              <br />
+            </div>
+          )
+        })}    
+      </div>
+    );
+  }
+}
+
+export default Events;
+
+{/* <Card>
             <CardHeader
               title="Ultimate Love"
               subtitle="Mudika Annual Retreat"
@@ -71,10 +106,4 @@ class Events extends Component {
               Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
             </CardText>
           </Card>
-          <br />
-      </div>
-    );
-  }
-}
-
-export default Events;
+          <br /> */}
