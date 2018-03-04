@@ -16,7 +16,11 @@ class Events extends Component {
   constructor() {
     super();
     this.state = {
-      events: []
+      events: [],
+      // TODO: Move these image imports to server
+      eventImages: {
+        uberImg: uberImg
+      }
     }
   }
 
@@ -37,7 +41,6 @@ class Events extends Component {
     return(
       <div className="Events component">
         <h1 className="component-title">Events</h1>
-        {/* TODO: fix 'src' path name */}
         <Divider />
         {this.state.events.map((event, i) => {
           return (
@@ -50,7 +53,7 @@ class Events extends Component {
                 <CardMedia
                   mediaStyle={styles.cardMedia}
                 >
-                  <img className="event-image" src={uberImg} />
+                  <img className="event-image" src={this.state.eventImages[event.thumbnail]} />
                 </CardMedia>
                 <CardText>
                   {event.description}

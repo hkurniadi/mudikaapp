@@ -3,21 +3,21 @@
     "title": "Need or GreedDDDDD",
     "category": "Ignite",
     "date": "Saturday, March 24, 2018",
-    "thumbnailPrefix": "Ignite picture path",
+    "thumbnail": "uberImg",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi. Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque. Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio."
   },
   {
     "title": "Ultimate Love",
     "date": "Friday-Sunday, October 6-9, 2017",
     "category": "Mudika Annual Retreat",
-    "thumbnailPrefix": "Ultimate Love picture path",
+    "thumbnail": "uberImg",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi. Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque. Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio."
   },
   {
     "title": "U-Ber",
     "category": "Welcoming Party",
     "date": "Saturday, September 9, 2017",
-    "thumbnailPrefix": "uberImg",
+    "thumbnail": "uberImg",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi. Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque. Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio."
   }
 ]

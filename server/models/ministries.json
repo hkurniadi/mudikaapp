@@ -1,26 +1,38 @@
 [
   {
     "title": "Cell Groups",
+    "shortName": "cellGroupTile",
+    "thumbnail": "cellGroupImg",
     "description": "God intends for us to experience life together, and that’s why we encourage you to get into a cell group. A cell group is a weekly gathering of approximately ten people who meet, hang out, study the Word, and pray together. No matter where you are in life, it is important to have a group of people you get together with on a weekly basis to study God’s Word and have fun!"
   },
   {
     "title": "Events",
+    "shortName": "eventsTile",
+    "thumbnail": "eventsImg",
     "description": "God intends for us to experience life together, and that’s why we encourage you to get into a cell group. A cell group is a weekly gathering of approximately ten people who meet, hang out, study the Word, and pray together. No matter where you are in life, it is important to have a group of people you get together with on a weekly basis to study God’s Word and have fun!"
   },
   {
     "title": "Marketing",
+    "shortName": "marketingTile",
+    "thumbnail": "marketingImg",
     "description": "God intends for us to experience life together, and that’s why we encourage you to get into a cell group. A cell group is a weekly gathering of approximately ten people who meet, hang out, study the Word, and pray together. No matter where you are in life, it is important to have a group of people you get together with on a weekly basis to study God’s Word and have fun!"
   },
   {
     "title": "Liturgy",
+    "shortName": "liturgyTile",
+    "thumbnail": "liturgyImg",
     "description": "God intends for us to experience life together, and that’s why we encourage you to get into a cell group. A cell group is a weekly gathering of approximately ten people who meet, hang out, study the Word, and pray together. No matter where you are in life, it is important to have a group of people you get together with on a weekly basis to study God’s Word and have fun!"
   },
   {
     "title": "Choir",
+    "shortName": "choirTile",
+    "thumbnail": "choirImg",
     "description": "God intends for us to experience life together, and that’s why we encourage you to get into a cell group. A cell group is a weekly gathering of approximately ten people who meet, hang out, study the Word, and pray together. No matter where you are in life, it is important to have a group of people you get together with on a weekly basis to study God’s Word and have fun!"
   },
   {
     "title": "Worship Band",
+    "shortName": "worshipBandTile",
+    "thumbnail": "worshipBandImg",
     "description": "God intends for us to experience life together, and that’s why we encourage you to get into a cell group. A cell group is a weekly gathering of approximately ten people who meet, hang out, study the Word, and pray together. No matter where you are in life, it is important to have a group of people you get together with on a weekly basis to study God’s Word and have fun!"
   }  
 ]

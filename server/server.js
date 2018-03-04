@@ -4,7 +4,9 @@ const PORT = process.env.PORT || 8080;
 // import { renderToString } from 'react-dom/server';
 // import App from './App';
 
-import eventsDB from './models/events.json';
+// Data Models
+import eventsData from './models/events.json';
+import ministriesData from './models/ministries.json';
 
 const app = express();
 
@@ -55,11 +57,16 @@ let index = `
 
 // GET Events Data
 app.get('/events', (req,res) => {
-  res.send(eventsDB);
-})
+  res.send(eventsData);
+});
+
+// GET Ministries Data
+app.get('/ministries', (req, res ) => {
+  res.send(ministriesData);
+});
 
 /* == End of React - Node Backend API == */
 
 app.listen(PORT, () => {
   console.log("Mudika Server is running on PORT", PORT);
-})
+});
