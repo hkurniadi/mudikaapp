@@ -7,16 +7,21 @@ class Mass extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nextMassDate: new Date("Jan 20, 2018").toLocaleDateString('en-US', {weekday: 'short', year: 'numeric', month: 'long', day: 'numeric'})
+      nextMassDate: new Date("February 17, 2018").toLocaleDateString('en-US', {weekday: 'short', year: 'numeric', month: 'long', day: 'numeric'}),
+      currentDate: new Date().toString()
     }
     
     this.nextMassDate = this.nextMassDate.bind(this);
   }
   
+  componentWillMount() {
+    this.nextMassDate();
+  }
+
   nextMassDate() {
     // TODO: add condition to change nextMassDate automatically when the currentDate reaches the nextMassDate
     let lastMassDate = this.state.nextMassDate;
-    let currentDate = new Date().toString();
+    let currentDate = this.state.currentDate;
     if (currentDate == this.state.nextMassDate) {
       let nextMass = lastMassDate.setDate(lastMassDate.getDate() + 14);
       let nextMassDate = new Date(nextMass).toLocaleDateString('en-US', {weekday: 'short', year: 'numeric', month: 'long', day: 'numeric'});  
@@ -26,7 +31,7 @@ class Mass extends Component {
     }
     return this.state.nextMassDate;
   }
-  
+
   render() {
     return (
       <div className="Mass component">

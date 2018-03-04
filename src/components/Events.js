@@ -21,13 +21,23 @@ class Events extends Component {
     this.state = {
       events: []
     }
+
+    this.getEvents = this.getEvents.bind(this);
   }
 
   componentDidMount() {
-    console.log("events data", events);
-    this.setState({
-      events: events
-    })
+    this.getEvents()
+      .then(res => this.setState({ events: res}))
+      .catch(err => console.log(err));
+  }
+
+  getEvents = async () => {
+    const response = await fetch('/events');
+    const body = await response.json();
+
+    if (response.status !== 200) throw Error(body.message);
+
+    return body;
   }
 
   render() {

@@ -51,13 +51,6 @@ class App extends Component {
         </Switch>
         <FloatingButton floatingMenuState={this.state.floatingMenuIsExpanded} />
         <Footer />
-
-        {/* Below is an example of using React Portal and rendering a component by passing in Children props and render the children in the wrapper component */}
-        {/* <Footer>
-          <div className="Footer">
-            <p>Made with Faith and &hearts; by Mudika Vancouver</p>
-          </div>
-        </Footer> */}
       </div>
     );
   }

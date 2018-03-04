@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import '../stylesheets/Welcome.css';
 
 class Welcome extends Component {
-  
   render() {
     return(
       <div className="Welcome">

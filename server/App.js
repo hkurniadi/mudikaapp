@@ -7,10 +7,18 @@ import React, { Component } from 'react';
 */
 
 class App extends Component {
+  constructor(props) {
+    super();
+    this.state = {
+      helloVar: "this is hello from state"
+    }
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Hello</h1>
+        <h2>{this.state.helloVar}</h2>
       </div>
     );
   }
