@@ -30,10 +30,9 @@ class Ministries extends Component {
   };
   
   componentDidMount() {
-    /* This code is to show a snackbar when scroll down, can be an option for CTA button */
-    // window.addEventListener("scroll", this.showCTAelement);
-
-    /* Another option for CTA by displaying a snackbar by timing */
+    
+    
+    // Displaying "Join Us" snackbar by timing
     setTimeout(this.showCTAelement, 3000);
 
   }

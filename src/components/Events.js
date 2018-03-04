@@ -9,11 +9,8 @@ import Divider from 'material-ui/Divider';
 import uberImg from '../assets/uber-welcomingparty.jpg';
 // import ultimateLoveImg from '';
 
-// APIs
-import eventsAPI from '../api/events.js';
-
-// Data
-import events from '../models/events.json';
+// Data API
+import dataAPI from '../api/dataAPI';
 
 class Events extends Component {
   constructor() {
@@ -21,23 +18,12 @@ class Events extends Component {
     this.state = {
       events: []
     }
-
-    this.getEvents = this.getEvents.bind(this);
   }
 
   componentDidMount() {
-    this.getEvents()
+    dataAPI('/events')
       .then(res => this.setState({ events: res}))
       .catch(err => console.log(err));
-  }
-
-  getEvents = async () => {
-    const response = await fetch('/events');
-    const body = await response.json();
-
-    if (response.status !== 200) throw Error(body.message);
-
-    return body;
   }
 
   render() {
