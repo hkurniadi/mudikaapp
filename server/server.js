@@ -8,7 +8,7 @@ import fs from 'fs';
 // Data Models
 import eventsData from './models/events.json';
 import ministriesData from './models/ministries.json';
-// TODO: create Mass Dates data model
+import massDatesData from './models/massDates.json';
 
 const app = express();
 
@@ -76,20 +76,22 @@ app.get('/ministries', (req, res ) => {
 });
 
 // GET Mass Data
-// TODO: store this date to data model
-let lastMassDate = new Date("March 3, 2018");
 app.get('/mass', (req, res) => {
-  console.log("Last Mass Date", lastMassDate);
-  let currentDate = new Date();
+  massDatesData.currentDate = Date.now();
+  let currentDate = new Date(massDatesData.currentDate);
   console.log("Current Date", currentDate);
-  let nextMassDate;
-  if (currentDate > lastMassDate) {
-    nextMassDate = new Date(lastMassDate.setDate(lastMassDate.getDate() + 14));
-    console.log("Next Mass Date", nextMassDate);
-    lastMassDate = nextMassDate;
+
+  let nextMassDate = new Date(massDatesData.nextMassDate);
+  console.log("Next Mass Date before checking conditional", nextMassDate);
+  
+  if (currentDate > nextMassDate) {
+    // Next mass date is added by 14 days
+    massDatesData.nextMassDate += 1209600000;
+    nextMassDate = massDatesData.nextMassDate;
+    console.log("Next Mass Date after plus 14 days", new Date(nextMassDate));
   }
   let payload = {
-    nextMassDate: nextMassDate.toLocaleDateString('en-US', {weekday: 'short', year: 'numeric', month: 'long', day: 'numeric'})
+    nextMassDate: new Date(nextMassDate).toLocaleDateString('en-US', {weekday: 'short', year: 'numeric', month: 'long', day: 'numeric'})
   };
   res.send(payload);
 });
