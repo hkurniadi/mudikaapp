@@ -14,39 +14,17 @@ class Mass extends Component {
       nextMassDate: '',
       currentDate: new Date().toString()
     }
-    
-    this.nextMassDate = this.nextMassDate.bind(this);
   }
-  
-  // componentWillMount() {
-  //   this.nextMassDate();
-  // }
 
   componentDidMount() {
     dataAPI('/mass')
       .then((res) => {
-        console.log(res);
+        // console.log("Next mass date", res);
         this.setState({
           nextMassDate: res.nextMassDate
         })
       })
       .catch(err => console.log(err));
-  }
-
-  nextMassDate() {
-    // TODO: 
-    // 1. add condition to change nextMassDate automatically when the currentDate reaches the nextMassDate
-    // 2. get the next date from the server
-    let lastMassDate = this.state.nextMassDate;
-    let currentDate = this.state.currentDate;
-    if (currentDate == this.state.nextMassDate) {
-      let nextMass = lastMassDate.setDate(lastMassDate.getDate() + 14);
-      let nextMassDate = new Date(nextMass).toLocaleDateString('en-US', {weekday: 'short', year: 'numeric', month: 'long', day: 'numeric'});  
-      this.setState({
-        nextMassDate: nextMassDate
-      })
-    }
-    return this.state.nextMassDate;
   }
 
   render() {

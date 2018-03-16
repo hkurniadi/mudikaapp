@@ -57,10 +57,9 @@ let index = `
 
 /* ROUTES */
 
-// TODO: FIX send images from here instead of importing from client
-
 // GET Welcome Data
 app.get('/welcome-background', (req, res) => {
+  // TODO: FIX send background images from here instead of importing from client
   console.log("Requesting background image......");
   res.sendFile("localhost:8080/assets/welcome-background.jpg");
 })
@@ -75,7 +74,7 @@ app.get('/ministries', (req, res ) => {
   res.send(ministriesData);
 });
 
-// GET Mass Data
+// GET Mass Date Data
 app.get('/mass', (req, res) => {
   massDatesData.currentDate = Date.now();
   let currentDate = new Date(massDatesData.currentDate);
