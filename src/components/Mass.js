@@ -3,23 +3,40 @@ import React, { Component } from 'react';
 // Stylesheets
 import "../stylesheets/Mass.css";
 
+// Data API
+import dataAPI from "../api/dataAPI";
+
 class Mass extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nextMassDate: new Date("February 17, 2018").toLocaleDateString('en-US', {weekday: 'short', year: 'numeric', month: 'long', day: 'numeric'}),
+      // nextMassDate: new Date("February 17, 2018").toLocaleDateString('en-US', {weekday: 'short', year: 'numeric', month: 'long', day: 'numeric'}),
+      nextMassDate: '',
       currentDate: new Date().toString()
     }
     
     this.nextMassDate = this.nextMassDate.bind(this);
   }
   
-  componentWillMount() {
-    this.nextMassDate();
+  // componentWillMount() {
+  //   this.nextMassDate();
+  // }
+
+  componentDidMount() {
+    dataAPI('/mass')
+      .then((res) => {
+        console.log(res);
+        this.setState({
+          nextMassDate: res.nextMassDate
+        })
+      })
+      .catch(err => console.log(err));
   }
 
   nextMassDate() {
-    // TODO: add condition to change nextMassDate automatically when the currentDate reaches the nextMassDate
+    // TODO: 
+    // 1. add condition to change nextMassDate automatically when the currentDate reaches the nextMassDate
+    // 2. get the next date from the server
     let lastMassDate = this.state.nextMassDate;
     let currentDate = this.state.currentDate;
     if (currentDate == this.state.nextMassDate) {

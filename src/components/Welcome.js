@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 
+// Stylesheets
 import '../stylesheets/Welcome.css';
 
+// Data API
+import dataAPI from '../api/dataAPI';
+
 class Welcome extends Component {
+  // TODO: FIX fetch images from the server after component rendered
+  componentDidMount() {
+    dataAPI('/welcome-background')
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  }
+
   render() {
     return(
       <div className="Welcome">

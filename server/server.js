@@ -1,5 +1,6 @@
 import express from 'express'
 const PORT = process.env.PORT || 8080;
+import fs from 'fs';
 // import React from 'react';
 // import { renderToString } from 'react-dom/server';
 // import App from './App';
@@ -7,6 +8,7 @@ const PORT = process.env.PORT || 8080;
 // Data Models
 import eventsData from './models/events.json';
 import ministriesData from './models/ministries.json';
+// TODO: create Mass Dates data model
 
 const app = express();
 
@@ -55,6 +57,14 @@ let index = `
 
 /* ROUTES */
 
+// TODO: FIX send images from here instead of importing from client
+
+// GET Welcome Data
+app.get('/welcome-background', (req, res) => {
+  console.log("Requesting background image......");
+  res.sendFile("localhost:8080/assets/welcome-background.jpg");
+})
+
 // GET Events Data
 app.get('/events', (req,res) => {
   res.send(eventsData);
@@ -63,6 +73,25 @@ app.get('/events', (req,res) => {
 // GET Ministries Data
 app.get('/ministries', (req, res ) => {
   res.send(ministriesData);
+});
+
+// GET Mass Data
+// TODO: store this date to data model
+let lastMassDate = new Date("March 3, 2018");
+app.get('/mass', (req, res) => {
+  console.log("Last Mass Date", lastMassDate);
+  let currentDate = new Date();
+  console.log("Current Date", currentDate);
+  let nextMassDate;
+  if (currentDate > lastMassDate) {
+    nextMassDate = new Date(lastMassDate.setDate(lastMassDate.getDate() + 14));
+    console.log("Next Mass Date", nextMassDate);
+    lastMassDate = nextMassDate;
+  }
+  let payload = {
+    nextMassDate: nextMassDate.toLocaleDateString('en-US', {weekday: 'short', year: 'numeric', month: 'long', day: 'numeric'})
+  };
+  res.send(payload);
 });
 
 /* == End of React - Node Backend API == */
