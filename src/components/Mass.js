@@ -10,9 +10,7 @@ class Mass extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // nextMassDate: new Date("February 17, 2018").toLocaleDateString('en-US', {weekday: 'short', year: 'numeric', month: 'long', day: 'numeric'}),
-      nextMassDate: '',
-      currentDate: new Date().toString()
+      nextMassDate: null
     }
   }
 

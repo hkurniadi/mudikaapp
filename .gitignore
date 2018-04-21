@@ -24,4 +24,6 @@ yarn-debug.log*
 yarn-error.log*
 
 project-notes.md
-firebase.js
+/server/firebase.js
+/server/npm-debug.log*
+/server/.env

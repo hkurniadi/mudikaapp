@@ -61,7 +61,7 @@ let index = `
 app.get('/welcome-background', (req, res) => {
   // TODO: FIX send background images from here instead of importing from client
   console.log("Requesting background image......");
-  res.sendFile("localhost:8080/assets/welcome-background.jpg");
+  // res.sendFile("localhost:8080/assets/welcome-background.jpg");
 })
 
 // GET Events Data
@@ -78,16 +78,16 @@ app.get('/ministries', (req, res ) => {
 app.get('/mass', (req, res) => {
   massDatesData.currentDate = Date.now();
   let currentDate = new Date(massDatesData.currentDate);
-  console.log("Current Date", currentDate);
+  // console.log("Current Date", currentDate);
 
   let nextMassDate = new Date(massDatesData.nextMassDate);
-  console.log("Next Mass Date before checking conditional", nextMassDate);
+  // console.log("Next Mass Date before checking conditional", nextMassDate);
   
   if (currentDate > nextMassDate) {
-    // Next mass date is added by 14 days
+    /* Next mass date is added by 14 days */
     massDatesData.nextMassDate += 1209600000;
     nextMassDate = massDatesData.nextMassDate;
-    console.log("Next Mass Date after plus 14 days", new Date(nextMassDate));
+    // console.log("Next Mass Date after plus 14 days", new Date(nextMassDate));
   }
   let payload = {
     nextMassDate: new Date(nextMassDate).toLocaleDateString('en-US', {weekday: 'short', year: 'numeric', month: 'long', day: 'numeric'})

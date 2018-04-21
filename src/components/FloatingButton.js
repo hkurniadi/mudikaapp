@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import FloatingMenu from './FloatingMenu.js';
-
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
