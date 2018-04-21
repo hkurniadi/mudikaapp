@@ -27,3 +27,6 @@ project-notes.md
 /server/firebase.js
 /server/npm-debug.log*
 /server/.env
+
+.vscode
+.firebaserc
